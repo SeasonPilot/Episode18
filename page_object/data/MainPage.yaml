@@ -1,4 +1,0 @@
-gotoProfile:
-  - by: id
-    locator: user_profile_icon
-    action: click
