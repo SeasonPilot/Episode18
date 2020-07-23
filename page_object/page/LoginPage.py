@@ -24,11 +24,12 @@ class LoginPage(BasePage):
         return self
 
     def loginByPassword(self, account, password):
-        self.find(self._other_locator).click()             # _other_locator前面要加self来访问类变量
-        self.find(self._tv_login_with_account).click()
-        self.find(self._login_account).send_keys(account)
-        self.find(self._login_password).send_keys(password)
-        self.find(self._button_next).click()
+        # self.find(self._other_locator).click()             # _other_locator前面要加self来访问类变量
+        # self.find(self._tv_login_with_account).click()
+        # self.find(self._login_account).send_keys(account)
+        # self.find(self._login_password).send_keys(password)
+        # self.find(self._button_next).click()
+        self.loadstep("../data/LoginPage.yaml", "loginByPassword", var1=account, var2=password)       # 这里的var1和var2要对应.yaml文件中的变量
         return self
 
     def loginSuccesBypassword(self, account, password):

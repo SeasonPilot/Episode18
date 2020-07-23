@@ -3,6 +3,7 @@ from page_object.page.ProfilePage import ProfilePage
 from page_object.page.SearchPage import SearchPage
 from page_object.page.SelectedPage import SelectedPage
 from selenium.webdriver.common.by import By
+import yaml
 
 
 class MainPage(BasePage):  # 继承BasePage
@@ -34,5 +35,6 @@ class MainPage(BasePage):  # 继承BasePage
         return SearchPage()
 
     def gotoProfile(self):
-        self.find(MainPage._profile_button).click()  # 访问类变量要加类名
+        # self.find(MainPage._profile_button).click()  # 访问类变量要加类名
+        self.loadstep('../data/MainPage.yaml', 'gotoProfile')
         return ProfilePage()
